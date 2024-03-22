@@ -1,8 +1,8 @@
 package com.atguigu.gmall.realtime.dwd.db.app;
 
-import com.atguigu.gmall.realtime.common.base.BaseSQLApp;
-import com.atguigu.gmall.realtime.common.constant.Constant;
-import com.atguigu.gmall.realtime.common.util.SQLUtil;
+import com.zxkw.gmall.realtime.common.base.BaseSQLApp;
+import com.zxkw.gmall.realtime.common.constant.Constant;
+import com.zxkw.gmall.realtime.common.util.SQLUtil;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
