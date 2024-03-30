@@ -13,6 +13,12 @@
         <module>realtime-dim</module>
         <module>realtime-dwd</module>
         <module>realtime-dws</module>
+        <module>task-bitmap</module>
+        <module>task-common</module>
+        <module>task-export</module>
+        <module>task-merge</module>
+        <module>task-ml</module>
+        <module>task-sql</module>
     </modules>
 
     <properties>
@@ -221,7 +227,7 @@
         </dependencies>
 
     </dependencyManagement>
-
+    <!--self-官方推荐的打包插件-->
     <build>
         <plugins>
             <plugin>

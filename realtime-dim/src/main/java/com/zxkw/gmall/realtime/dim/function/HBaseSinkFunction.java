@@ -14,6 +14,9 @@ import redis.clients.jedis.Jedis;
 
 import java.io.IOException;
 
+/**
+ * @author lenovo
+ */
 @Slf4j
 public class HBaseSinkFunction extends RichSinkFunction<Tuple2<JSONObject, TableProcessDim>> {
 

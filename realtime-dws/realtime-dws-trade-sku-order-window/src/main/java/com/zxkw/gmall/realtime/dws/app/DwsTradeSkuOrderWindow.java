@@ -31,6 +31,9 @@ import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author lenovo
+ */
 public class DwsTradeSkuOrderWindow extends BaseApp {
     public static void main(String[] args) {
         new DwsTradeSkuOrderWindow().start(

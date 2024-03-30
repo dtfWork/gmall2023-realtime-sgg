@@ -14,6 +14,9 @@ import org.apache.hadoop.hbase.util.Bytes;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * @author lenovo
+ */
 @Slf4j
 public class HBaseUtil {
 

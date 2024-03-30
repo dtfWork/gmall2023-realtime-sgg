@@ -24,6 +24,9 @@ import org.apache.flink.util.Collector;
 
 import java.time.Duration;
 
+/**
+ * @author lenovo
+ */
 public class DwsTradePaymentSucWindow extends BaseApp {
     public static void main(String[] args) {
         new DwsTradePaymentSucWindow().start(

@@ -3,6 +3,9 @@ package bean;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * @author lenovo
+ */
 @Data
 @AllArgsConstructor
 public class CartAddUuBean {
