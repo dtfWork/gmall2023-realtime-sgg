@@ -76,7 +76,6 @@ public class HBaseSinkFunction extends RichSinkFunction<Tuple2<JSONObject, Table
                 rowKey,
                 tableProcessDim.getSinkFamily(),
                 data);
-
     }
 
     private void delDim(Tuple2<JSONObject, TableProcessDim> dataWithConfig) throws IOException {
