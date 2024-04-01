@@ -29,6 +29,7 @@
                 </executions>
             </plugin>
 
+            <!--maven打包方式:不集成springboot:构建（打包）阶段自动生成一个包含所有依赖的可执行JAR文件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -39,6 +40,7 @@
                     </descriptorRefs>
                 </configuration>
                 <executions>
+                    <!--执行配置-->
                     <execution>
                         <id>make-assembly</id>
                         <phase>package</phase>
