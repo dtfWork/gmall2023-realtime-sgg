@@ -32,6 +32,9 @@ import org.apache.hadoop.hbase.client.Connection;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * @author lenovo
+ */
 @Slf4j
 public class DimApp extends BaseApp {
     public static void main(String[] args) {

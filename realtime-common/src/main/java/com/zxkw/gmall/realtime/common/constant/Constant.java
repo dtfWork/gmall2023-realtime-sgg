@@ -1,5 +1,9 @@
 package com.zxkw.gmall.realtime.common.constant;
 
+/**
+ * @author lenovo
+ * 常量配置类:包含数据库连接配置，kafka-topic配置等
+ */
 public class Constant {
     public static final String KAFKA_BROKERS = "hadoop102:9092,hadoop103:9092,hadoop104:9092";
 

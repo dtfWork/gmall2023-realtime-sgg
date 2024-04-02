@@ -13,6 +13,7 @@
 
     <build>
         <plugins>
+            <!--scala代码的编译插件-->
             <!-- 该插件用于将Scala代码编译成class文件 -->
             <plugin>
                 <groupId>net.alchim31.maven</groupId>

@@ -30,7 +30,6 @@ public class HBaseSinkFunction extends RichSinkFunction<Tuple2<JSONObject, Table
         jedis = RedisUtil.getJedis();
     }
 
-
     @Override
     public void close() throws Exception {
         HBaseUtil.closeHBaseConn(conn);

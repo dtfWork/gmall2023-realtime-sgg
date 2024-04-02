@@ -9,16 +9,22 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <!--数据采集模块-->
+        <!--离线数仓模块-->
+        <!--实时数仓模块-->
         <module>realtime-common</module>
         <module>realtime-dim</module>
         <module>realtime-dwd</module>
         <module>realtime-dws</module>
+        <!--用户画像模块-->
         <module>task-bitmap</module>
         <module>task-common</module>
         <module>task-export</module>
         <module>task-merge</module>
         <module>task-ml</module>
         <module>task-sql</module>
+        <module>collection-integration</module>
+        <!--推荐系统模块-->
     </modules>
 
     <properties>
