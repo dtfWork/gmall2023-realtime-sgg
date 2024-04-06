@@ -1,0 +1,25 @@
+{
+  "common": {
+    "ar": "370000",
+    "ba": "Honor",
+    "ch": "wandoujia",
+    "is_new": "1",
+    "md": "Honor 20s",
+    "mid": "eQF5boERMJFOujcp",
+    "os": "Android 11.0",
+    "uid": "76",
+    "vc": "v2.1.134"
+  },
+  "start": {   
+    "entry": "icon",         
+    "loading_time": 18803,  
+    "open_ad_id": 7,        
+    "open_ad_ms": 3449,    
+    "open_ad_skip_ms": 1989   
+  },
+"err":{                     
+"error_code": "1234",      
+    "msg": "***********"       
+},
+  "ts": 1585744304000
+}

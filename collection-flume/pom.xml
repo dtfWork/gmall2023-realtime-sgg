@@ -21,6 +21,7 @@
             <groupId>org.apache.flume</groupId>
             <artifactId>flume-ng-core</artifactId>
             <version>1.9.0</version>
+            <!--编译测试有效;打包运行无效-->
             <scope>provided</scope>
         </dependency>
 

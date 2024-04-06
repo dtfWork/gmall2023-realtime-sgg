@@ -22,12 +22,15 @@ public class ETLInterceptor implements Interceptor {
     public Event intercept(Event event) {
         //1 获取json数据
         byte[] body = event.getBody();
+            //把字节数组数据转为UTF_8的字符串
         String log = new String(body, StandardCharsets.UTF_8);
 
-        //2 校验json数据
+        //2 校验json数据是否是合格的json
         if (JSONUtil.isJSONValidate(log)) {
+            //System.out.println("Valid JSON");
             return event;
         } else {
+            //System.out.println("Valid JSON");可直接返回全局统一异常,异常处理里可以先保存,再发送异常邮件之类;
             return null;
         }
     }

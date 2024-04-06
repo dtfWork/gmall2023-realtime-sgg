@@ -1,0 +1,69 @@
+{
+	"common": {                     
+		"ar": "230000",             
+		"ba": "iPhone",             
+		"ch": "Appstore",           
+		"is_new": "1",              
+		"md": "iPhone 8",           
+		"mid": "YXfhjAYH6As2z9Iq",  
+		"os": "iOS 13.2.9",         
+		"uid": "485",               
+		"vc": "v2.1.134"           
+	},
+	"actions": [{                   
+		"action_id": "favor_add",   
+		"item": "3",                
+		"item_type": "sku_id",      
+		"ts": 1585744376605         
+	    }
+	],
+	"displays": [{                  
+			"displayType": "query", 
+			"item": "3",            
+			"item_type": "sku_id",  
+			"order": 1,             
+			"pos_id": 2             
+		},
+		{
+			"displayType": "promotion",
+			"item": "6",
+			"item_type": "sku_id",
+			"order": 2,
+			"pos_id": 1
+		},
+		{
+			"displayType": "promotion",
+			"item": "9",
+			"item_type": "sku_id",
+			"order": 3,
+			"pos_id": 3
+		},
+		{
+			"displayType": "recommend",
+			"item": "6",
+			"item_type": "sku_id",
+			"order": 4,
+			"pos_id": 2
+		},
+		{
+			"displayType": "query ",
+			"item": "6",
+			"item_type": "sku_id",
+			"order": 5,
+			"pos_id": 1
+		}
+	],
+	"page": {                         
+		"during_time": 7648,           
+		"item": "3", 	               
+		"item_type": "sku_id",         
+		"last_page_id": "login",      
+		"page_id": "good_detail",      
+		"sourceType": "promotion"      
+	},                                 
+	"err": {                           
+		"error_code": "1234",          
+		"msg": "***********"           
+	},                                 
+	"ts": 1585744374423                
+}

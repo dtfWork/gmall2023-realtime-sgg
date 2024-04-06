@@ -15,7 +15,7 @@ public class TimestampAndTableNameInterceptor implements Interceptor {
 
     }
 
-    /*
+    /**
     * 1 将body当中的table 赋值到header当中的tableName
     * 2 将body当中的ts    赋值到header当中的timestamp
     * */

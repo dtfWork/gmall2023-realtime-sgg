@@ -7,9 +7,12 @@ import java.util.List;
 
 /**
  * @author lenovo
+ * json工具类:判断字符串是否是合法的json：判断string字符串是否可以转为json
  */
+
 public class JSONUtil {
 
+    // json工具类
     public static boolean isJSONValidate(String log) {
         try {
             JSONObject.parseObject(log);
@@ -33,6 +36,8 @@ public class JSONUtil {
 //        events.remove(3);
 //        System.out.println(events);
 //    }
+
+
 
 
 }

@@ -23,7 +23,10 @@
         <module>task-merge</module>
         <module>task-ml</module>
         <module>task-sql</module>
-        <module>collection-integration</module>
+        <module>collection-flume</module>
+        <module>user_profile_manager_0428</module>
+        <module>SparrowRecSys_jksj</module>
+        <module>collection-mock-springboot</module>
         <!--推荐系统模块-->
     </modules>
 
@@ -32,12 +35,19 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <flink.version>1.17.1</flink.version>
         <scala.version>2.12</scala.version>
         <hadoop.version>3.3.4</hadoop.version>
         <flink-cdc.vesion>2.4.0</flink-cdc.vesion>
         <fastjson.version>1.2.83</fastjson.version>
         <hbase.version>2.4.11</hbase.version>
+        <spark.version>2.1.1</spark.version>
+        <scala.version>2.11.8</scala.version>
+        <slf4j.version>1.7.22</slf4j.version>
+
+        <httpclient.version>4.5.5</httpclient.version>
+        <httpmime.version>4.3.6</httpmime.version>
     </properties>
 
     <dependencies>
@@ -156,6 +166,17 @@
         <dependencies>
 
             <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpmime.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
@@ -229,6 +250,38 @@
                 <artifactId>lettuce-core</artifactId>
                 <version>6.2.4.RELEASE</version>
             </dependency>
+
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-core_2.11</artifactId>
+                    <version>${spark.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-hive_2.11</artifactId>
+                    <version>${spark.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-sql_2.11</artifactId>
+                    <version>${spark.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-streaming_2.11</artifactId>
+                    <version>${spark.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apache.spark</groupId>
+                    <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>
+                    <version>${spark.version}</version>
+                </dependency>
+
+
 
         </dependencies>
 
