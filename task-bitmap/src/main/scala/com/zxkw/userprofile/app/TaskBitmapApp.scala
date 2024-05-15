@@ -1,9 +1,9 @@
-package com.zxkw.flume.interceptor.userprofile.app
+package com.zxkw.userprofile.app
 
-import com.zxkw.flume.interceptor.userprofile.common.bean.TagInfo
-import com.zxkw.flume.interceptor.userprofile.common.constants.ConstCode
-import com.zxkw.flume.interceptor.userprofile.common.dao.TagInfoDAO
-import com.zxkw.flume.interceptor.userprofile.common.util.ClickhouseUtil
+import com.zxkw.userprofile.common.bean.TagInfo
+import com.zxkw.userprofile.common.constants.ConstCode
+import com.zxkw.userprofile.common.dao.TagInfoDAO
+import com.zxkw.userprofile.common.util.ClickhouseUtil
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable.ListBuffer
