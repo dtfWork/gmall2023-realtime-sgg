@@ -22,6 +22,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-mllib_2.12</artifactId>
             <scope>provided</scope>
+            <version>3.0.0</version>
         </dependency>
     </dependencies>
     <build>
@@ -40,6 +41,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <scalaVersion>2.12.11</scalaVersion>
+                </configuration>
             </plugin>
 
             <plugin>

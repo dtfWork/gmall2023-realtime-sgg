@@ -34,6 +34,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <scalaVersion>2.12.11</scalaVersion>
+                </configuration>
             </plugin>
 
             <plugin>

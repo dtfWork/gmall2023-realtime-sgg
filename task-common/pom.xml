@@ -11,6 +11,14 @@
 
     <artifactId>task-common</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <!--scala代码的编译插件-->
@@ -28,7 +36,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <scalaVersion>2.12.11</scalaVersion>
+                </configuration>
             </plugin>
+
 
             <!--maven打包方式:不集成springboot:构建（打包）阶段自动生成一个包含所有依赖的可执行JAR文件-->
             <plugin>
