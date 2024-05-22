@@ -41,7 +41,7 @@
                 </configuration>
             </plugin>
 
-
+            <!--java打包插件-->
             <!--maven打包方式:不集成springboot:构建（打包）阶段自动生成一个包含所有依赖的可执行JAR文件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
