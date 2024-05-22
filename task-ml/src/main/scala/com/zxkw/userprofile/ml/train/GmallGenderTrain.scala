@@ -6,14 +6,17 @@ import com.zxkw.userprofile.ml.pipeline.MyPipeline
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-
-// 1   提取特征 sql（必须有label）    ->df
+/**
+ * 用户性别预测的模型训练
+ *  // 1   提取特征 sql（必须有label）    ->df
 // 2    拆分数据集   ->train test
 //3     初始化流水线工具
 //4    利用流水线  进行训练
 //5     测试
 //6     评估
-//7     保存
+//7     保存训练好的模型到hdfs
+ */
+
 object GmallGenderTrain {
 
 

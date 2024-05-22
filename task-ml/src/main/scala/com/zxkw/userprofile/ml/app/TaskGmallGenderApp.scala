@@ -8,12 +8,15 @@ import com.zxkw.userprofile.ml.pipeline.MyPipeline
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object TaskGmallGenderApp {
-
-//1  提取数据 (答案随意)
-//2  加载模型到流水线
+/**
+ * 用户性别预测的模型预测。（定时执行，且肯定在训练模型生成之后。）
+ *  //1  提取数据 (答案随意)
+//2  加载hdfs中训练好的模型到流水线
 //3   用流水线进行预测
 //4   把矢量值转为原值
+ */
+object TaskGmallGenderApp {
+
   def main(args: Array[String]): Unit = {
       println(" 0  spark hive环境")
 

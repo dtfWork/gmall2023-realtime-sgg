@@ -22,9 +22,15 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-mllib_2.12</artifactId>
             <scope>provided</scope>
-            <version>3.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>net.jpountz.lz4</groupId>
+                    <artifactId>lz4</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <!-- 该插件用于将Scala代码编译成class文件 -->

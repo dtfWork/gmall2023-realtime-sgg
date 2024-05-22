@@ -6,6 +6,9 @@ import com.zxkw.userprofile.ml.pipeline.MyPipeline
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 
+/**
+ * 八 实现训练主程序
+ */
 object StudentGenderTrain {
 
 

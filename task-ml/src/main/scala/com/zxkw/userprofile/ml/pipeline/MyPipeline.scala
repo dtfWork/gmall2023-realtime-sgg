@@ -7,46 +7,34 @@ import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.DataFrame
 
+/**
+ * 一 创建流程线对象
+ * 二 增加四大流程线组件
+ *    1. 创建标签索引
+ *    2. 创建特征集合
+ *    3. 创建特征向量索引
+ *    4. 创建分类器
+ * 三 初始化对象 init(): MyPipeline
+ * 四 训练
+ * 五 查看模型的决策树
+ * 六 获取各个特征权重
+ * 七 预测
+ * 八 在train包下实现训练主程序 convertLabel
+ * 九 转换预测列 并应用至训练主程序
+ * 十 评估 并应用至训练主程序
+ * 十一 模型优化:拟合与剪枝
+ */
 class MyPipeline {
 
-
-  var pipeline:Pipeline=null
-
-  var pipelineModel:PipelineModel=null
-
-  def  init(): MyPipeline ={
-    pipeline= new Pipeline().setStages(Array(
-        createLabelIndexer(),
-        createFeatureAssembler(),
-        createFeatureIndexer(),
-        createClassifier()
-    ))
-    this
-  }
-
-  var  labelColName:String=null
-  def  setLabelColName(labelColName:String): MyPipeline ={
-    this.labelColName=labelColName
-    this
-  }
-
-  var  featureCols:Array[String]=null
-
-  def  setFeatureCols(featureCols :Array[String]): MyPipeline ={
-    this.featureCols=featureCols
-     this
-  }
-
-  var maxCategories=5
-  def  setMaxCategories(maxCategories:Int): MyPipeline ={
-      this.maxCategories=maxCategories
-    this
-  }
-
+  // 流水线对象
+  private var pipeline:Pipeline=null
+  // 流水线训练后模型
+  private var pipelineModel:PipelineModel=null
 
   //// 以下为参数 ////////////////////
-
-  // 最大分支数
+  //最大分类树（用于识别连续值特征和分类特征）
+  private var maxCategories=5
+  // 最大分支数 2.0文档中设置的为5
   private var maxBins=20
   // 最大树深度
   private var maxDepth=5
@@ -55,9 +43,14 @@ class MyPipeline {
   //最小分支信息增益
   private var minInfoGain=0.0
 
+  var  labelColName:String=null
+  var  featureCols:Array[String]=null
 
 
-
+  def  setMaxCategories(maxCategories:Int): MyPipeline ={
+    this.maxCategories=maxCategories
+    this
+  }
 
   def setMaxBins(maxBins:Int): MyPipeline ={
     this.maxBins=maxBins
@@ -75,6 +68,16 @@ class MyPipeline {
 
   def setMinInfoGain(minInfoGain:Double): MyPipeline ={
     this.minInfoGain=minInfoGain
+    this
+  }
+
+  def  setLabelColName(labelColName:String): MyPipeline ={
+    this.labelColName=labelColName
+    this
+  }
+
+  def  setFeatureCols(featureCols :Array[String]): MyPipeline ={
+    this.featureCols=featureCols
     this
   }
 
@@ -142,6 +145,17 @@ class MyPipeline {
 
         classifier
 
+  }
+
+
+  def  init(): MyPipeline ={
+    pipeline= new Pipeline().setStages(Array(
+      createLabelIndexer(),
+      createFeatureAssembler(),
+      createFeatureIndexer(),
+      createClassifier()
+    ))
+    this
   }
 
 
@@ -220,6 +234,5 @@ class MyPipeline {
     val convertedDataFrame: DataFrame = indexToString.transform(predictedDataFrame)
     convertedDataFrame
   }
-
 
 }
