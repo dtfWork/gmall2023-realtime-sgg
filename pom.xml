@@ -24,7 +24,6 @@
         <module>task-ml</module>
         <module>task-sql</module>
         <module>collection-flume</module>
-        <module>user_profile_manager_0428</module>
         <module>SparrowRecSys_jksj</module>
         <module>collection-mock-springboot</module>
         <module>zxkwWork</module>
@@ -274,6 +273,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.12</artifactId>
             <version>${spark.version}</version>
+            <!-- provider如果存在，那么运行时该Jar包不存在，也不会打包到最终的发布版本中，只是编译器有效 -->
             <scope>provided</scope>
         </dependency>
 
@@ -358,7 +358,15 @@
             <groupId>ru.yandex.clickhouse</groupId>
             <artifactId>clickhouse-jdbc</artifactId>
             <version>0.1.55</version>
+            <!--   和spark的压缩依赖冲突-->
+            <exclusions>
+                <exclusion>
+                    <groupId>net.jpountz.lz4</groupId>
+                    <artifactId>lz4</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -373,7 +381,7 @@
 
 
     </dependencies>
-
+    <!-- 依赖管理,子模块依旧需要声明依赖，但是不用声明版本号 -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -493,6 +501,26 @@
     <!--self-官方推荐的打包插件-->
     <build>
         <plugins>
+            <!--打包插件:取自用户画像3.0-java版-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
