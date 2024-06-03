@@ -24,11 +24,27 @@ Four tasks:
 
 (1) By writing SQL based on the business logic of each label, produce a single label table.
 
-(2) [Merge label single tables into label wide tables.](https://github.com/dtfWork/gmall2023-realtime-sgg/tree/master/task-sql)
+​	code implement process link;spark technical questions link(it has 78 questions in youtube.optimize);
+
+(2) [Merge label single tables into label wide tables.
+
+    code implement process link;hive technical questions link;
 
 (3) Export the label width table to the label width table in Clickhouse.
 
+​	spark technical questions link(specially, spark connector);
+
 (4) Dump the label table in Clickhouse into a Bitmap table.
+
+      code implements process link;clickhouse technical questions link;
+
+      BitMap principle and why it can improve performance:
+
+Bitmap is a binary set that identifies the existence of a value using 0 or 1.
+
+When calculating the intersection of two sets, there is no need to traverse the two sets, just perform an AND operation on the bits. Whether it is a decrease in the number of comparisons (from O (N ^ 2) to O (N)) or an improvement in comparison methods (bit operations), both bring significant performance improvements.
+
+Business scenario: Put the user ID set of each label in a Bitmap, and when performing group filtering by finding the intersection of multiple labels (such as female+post-90s), the intersection of the Bitmaps of the two labels can be calculated.
 
 Four tasks are completed by writing Spark programs. And through the profiling platform scheduling, adding new tags in the future only requires filling in the tag definition, SQL, and related parameters on the platform.
 
@@ -62,13 +78,16 @@ Four tasks are completed by writing Spark programs. And through the profiling pl
 
 ![image-20240531125146813](D:\1-code\idea-space\gmall2023-realtime-sgg\user_profile_interview.assets\image-20240531125146813.png)
 
-### 8. BitMap principle and why it can improve performance
-
-Bitmap is a binary set that identifies the existence of a value using 0 or 1.
-
-When calculating the intersection of two sets, there is no need to traverse the two sets, just perform an AND operation on the bits. Whether it is a decrease in the number of comparisons (from O (N ^ 2) to O (N)) or an improvement in comparison methods (bit operations), both bring significant performance improvements.
-
-Business scenario: Put the user ID set of each label in a Bitmap, and when performing group filtering by finding the intersection of multiple labels (such as female+post-90s), the intersection of the Bitmaps of the two labels can be calculated.
+### 8. 
 
 ### 9. what technology do you use to solve ID-mapping question?from-self
 
+### 
+
+### 12. clickhouse technical questions.
+
+### 13. redis technical questions.
+
+### 14. java or python technical questions.
+
+### 15. data structure and algorithom questions.big scale data process,like sort or others.
